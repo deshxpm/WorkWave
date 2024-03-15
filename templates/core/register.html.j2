@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile Form</title>
+</head>
+<body>
+    <h2>User Profile Form</h2>
+    <form action="{% if userprofile %}{% url 'userprofile-update' userprofile.uniqueid %}{% else %}{% url 'userprofile-create' %}{% endif %}" method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value="{{ userprofile.username if userprofile else '' }}" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="{{ userprofile.email if userprofile else '' }}" required><br><br>
+        <!-- Add more fields as needed -->
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

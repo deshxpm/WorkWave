@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Ticket</title>
+</head>
+<body>
+    <h1>Update Ticket</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="status">Status:</label><br>
+        <select id="status" name="status">
+            <option value="Created">Created</option>
+            <option value="Pending">Pending</option>
+            <option value="Assigned">Assigned</option>
+            <option value="Work in Progress">Work in Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Closed">Closed</option>
+            <option value="Canceled">Canceled</option>
+        </select><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

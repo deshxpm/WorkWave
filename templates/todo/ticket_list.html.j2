@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket List</title>
+</head>
+<body>
+    <h1>Ticket List</h1>
+    <ul>
+        {% for ticket in tickets %}
+            <li>{{ ticket.title }} - Status: {{ ticket.status }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url ('ticket_create') }}">Create Ticket</a>
+</body>
+</html>

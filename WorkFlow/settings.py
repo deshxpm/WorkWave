@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     'core',
     'todo',
     'hr',
+    'attendance_tracking',
+    'employees',
+    'leave_management',
+    'payroll_management',
+    'performance_management',
+    'reporting_analytics',
 ]
 
 MIDDLEWARE = [
@@ -58,8 +64,16 @@ ROOT_URLCONF = 'WorkFlow.urls'
 
 TEMPLATES = [
     {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': ['templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': "WorkFlow.jinja2.environment",
+        },
+    },
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,3 +140,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'core.UserProfile'

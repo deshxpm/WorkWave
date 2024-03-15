@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    
+    <h2>Quick Links</h2>
+    <ul>
+        <li><a href="{{ url ('userprofile-list') }}">User Profiles</a></li>
+        <li><a href="{{ url ('leave_request_list') }}">Leave Requests</a></li>
+        <!-- Add more quick links as needed -->
+    </ul>
+    
+    <h2>Recent Activities</h2>
+    <ul>
+        {% for activity in recent_activities %}
+            <li>{{ activity }}</li>
+        {{ empty }}
+            <li>No recent activities</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <h2>User Profiles</h2>
     <ul>
         {% for userprofile in userprofiles %}
-            <li><a href="{% url 'userprofile-detail' userprofile.uniqueid %}">{{ userprofile.username }}</a></li>
+            <li><a href="/userprofile-detail/{{userprofile.uniqueid}}">{{ userprofile.username }}</a></li>
         {% endfor %}
     </ul>
 </body>
